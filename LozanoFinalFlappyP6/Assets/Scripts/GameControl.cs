@@ -8,6 +8,7 @@ public class GameControl : MonoBehaviour
     public static GameControl instance;
     public GameObject gameOverText;
     public bool gameOver = false;
+    public float scrollSpeed = -1.5f;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,14 +20,14 @@ public class GameControl : MonoBehaviour
 
         else if (instance != this)
         {
-            Destroy (gameObject);
+            Destroy(gameObject);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameOver == true && Input.GetMouseButtonDown (0))
+        if (gameOver ==true && Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
